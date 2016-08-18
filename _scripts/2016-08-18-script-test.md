@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: script
 title: "Script Test"
 date: 2016-08-18
 ---
