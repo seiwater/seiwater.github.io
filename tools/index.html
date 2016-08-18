@@ -2,9 +2,10 @@
 layout: default
 title: SEI Water Group: Tools and Scripts
 ---
-<h1> SEI Water Group: Tools and Scripts </h1>
 
-{% for post in site.posts %}
-<li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-{% endfor %}
-
+<div class="blurb">
+        <h1> SEI Water Group: Tools and Scripts</h1>
+	      {% for post in site.posts %}
+      <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+        {% endfor %}
+</div><!-- /.blurb -->
