@@ -1,33 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>SEI Water Group: Tools and Scripts</title>
-		<!-- link to main stylesheet -->
-		<link rel="stylesheet" type="text/css" href="/css/main.css">
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="http://sei-us.org/WaterResources">About</a></li>
-        		<li><a href="/Tools">Tools</a></li>
-        		<li><a href="/People">People</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-		
-    		<ul class="posts">
+---
+layout: default
+title: SEI Water Group: Scripts and Tools
+---
+	<h1>{{ page.title }}</h1>
+	<ul class="posts">
 
- {% for post in site.posts %}
- <li><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
-    		
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="http://www.weap21.org/">WEAP website</a></li>
-			</ul>
-		</footer>
-	</body>
-</html>
+	  {% for post in site.posts %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% endfor %}
+	</ul>
