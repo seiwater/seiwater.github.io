@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-<head>
-
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />
-
+---
+layout: post
+title: "Initial Analyses of Climatological Time-Series"
+date: 2016-08-19
+---
 
 <meta name="author" content="Manon von Kaenel &amp; Nick Depsky" />
 
