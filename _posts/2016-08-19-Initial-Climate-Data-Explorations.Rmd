@@ -1,5 +1,6 @@
 ---
 title: "Initial Analyses of Climatological Time-Series"
+layout: post
 author: '  Manon von Kaenel & Nick Depsky '
 date: '  Created: August 5th 2016, Updated: August 5th, 2016  '
 output:
