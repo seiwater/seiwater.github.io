@@ -150,9 +150,9 @@ $(document).ready(function () {
 </ul>
 </div>
 
-<p>Some notes for filling missing data in climatological time-series using R, completed by the Stockholm Environment Institute (SEI) Water Group (see SEI Water Group’s github page <a href="https://seiwater.github.io/">here</a>.</p>
-<p>The Rmarkdown file and data used to generate this page is stored on <a href="seiwater.github.io/R/2016-09-15-Filling-Missing-Data-in-Climatological-Time-Series.Rmd">github</a>.</p>
-<p>Last updated: by Manon von Kaenel, Sept 16th 2016</p>
+<p><strong>Intro:</strong> Some notes for filling missing data in climatological time-series using R, completed by the Stockholm Environment Institute (SEI) Water Group (see SEI Water Group’s github page <a href="https://seiwater.github.io/">here</a>.</p>
+<p><strong>Access to raw data and Rmarkdown files:</strong> The Rmarkdown file and data used to generate this page is stored on <a href="seiwater.github.io/R/2016-09-15-Filling-Missing-Data-in-Climatological-Time-Series.Rmd">github</a>, and the raw data/files used in this example are stored [here] (seiwater.github.io/raw_data/fillmissdata.zip)</p>
+<p><strong>Last updated:</strong> by Manon von Kaenel, Sept 16th 2016</p>
 <div id="goals" class="section level2">
 <h2>Goals</h2>
 <p>Go over some common workflows relevant to handling missing data when dealing with climatological station time-series data (This example will use precipitation records from the Santa Clara Valley, CA). A potential application for this script is to help in preparing climate input data for a WEAP model. Before even using this script, we recommend conducing some exploratory analysis on your data, including identifying and correcting any anomalies or incorrect data (see our process <a href="https://seiwater.github.io/2016/08/19/Initial-Climate-Data-Explorations.html">here</a>).</p>
@@ -167,10 +167,10 @@ $(document).ready(function () {
 </div>
 <div id="resources" class="section level2">
 <h2>Resources</h2>
-<p>Data used for the examples are hosted in this repository. The zipped file contains the following: - <code>SCVWD_Daily_RainGage_ts.csv</code> : csv of the station precipitation data in Santa Clara County, CA - <code>Station_XY_ft.csv</code>: csv of station Lon Lat Coordinates You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory</p>
+<p>Data used for the examples are hosted in this repository. The zipped file contains the following: * <em>SCVWD_Daily_RainGage_ts.csv</em> : csv of the station precipitation data in Santa Clara County, CA * <em>Station_XY_ft.csv</em>: csv of station Lon Lat Coordinates You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory</p>
 <pre class="r"><code>setwd(tempdir())  # set working directory to temporary directory 
 
-download.file(&quot;https://github.com/njdepsky/Climate-Data-Processing-for-WEAP-Applications/raw/master/rawdata/fillmissdata.zip&quot;, destfile = 'fillmissdata.zip')
+download.file(&quot;https://github.com/seiwater/Raw-Data/raw/master/fillmissdata.zip&quot;, destfile = 'fillmissdata.zip')
 
 unzip( 'fillmissdata.zip' , exdir = getwd())</code></pre>
 <p>The methods used in this script are described in detail in R. Teegavarapu and V. Chandramouli’s 2005 paper on <a href="http://www.sciencedirect.com/science/article/pii/S0022169405000880">“Improved weighting methods, deterministic and stochastic data-driven models for estimation of missing precipitation records”</a>. This script provides two options to fill in missing data: the <strong>Correlation Coefficient Weighting Method (CCWM)</strong> and the <strong>Inverse Distance Weighting Method (IDWM)</strong>. Both are described in more detail in this paper. Special note: there exist many methods to fill in missing precipitation data, and we recommend doing some initial reserach to decide which method is most appropriate for your data and your purpose.</p>
