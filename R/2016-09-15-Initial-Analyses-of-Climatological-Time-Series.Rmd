@@ -383,7 +383,7 @@ i <- 35
 p <- i+4
 
 NA_percent <- round(sum(is.na(data[,p]))/nrow(data)*100, 2)
-plot(years,data[,p],type ="p", main =allstations[i],ylab=clima.var,col="blue",sub=paste(c("% values NA = ",NA_percent),collapse=""),cex=0.2)
+plot(years,as.character(data[,p]),type ="p", main =allstations[i],ylab=clima.var,col="blue",sub=paste(c("% values NA = ",NA_percent),collapse=""),cex=0.2)
 ```
 
 The above chunk of script also calculates the percent of missing data, minimum, maximum and average value for each station and saves it in a table (called "SummaryTimeSeries"). Let's take a look at the first couple lines of that table here.
@@ -453,7 +453,7 @@ i <- 35
 p <- i+4
 
 NA_percent <- round(sum(is.na(data[,p]))/nrow(data)*100, 2)
-plot(years,data[,p],type ="p", main =allstations[i],ylab=clima.var,col="blue",sub=paste(c("% values NA = ",NA_percent),collapse=""),cex=0.2)
+plot(years,as.character(data[,p]),type ="p", main =allstations[i],ylab=clima.var,col="blue",sub=paste(c("% values NA = ",NA_percent),collapse=""),cex=0.2)
 
 head(as.data.frame(matrix))
 ```
@@ -514,7 +514,7 @@ i <- 35
 p <- i+4
 
 NA_percent <- round(sum(is.na(data[,p]))/nrow(data)*100, 2)
-plot(years,data[,p],type ="p", main =allstations[i],ylab=clima.var,col="blue",sub=paste(c("% values NA = ",NA_percent),collapse=""),cex=0.2)
+plot(years,as.character(data[,p]),type ="p", main =allstations[i],ylab=clima.var,col="blue",sub=paste(c("% values NA = ",NA_percent),collapse=""),cex=0.2)
 
 head(as.data.frame(matrix))
 ```
