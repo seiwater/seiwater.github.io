@@ -30,9 +30,7 @@ This script will cover specifically...
 * Calculating error indices between simulated and observed time series
 
 ## Resources
-Data used for the examples are hosted in this repository. The zipped file contains the following:
-* SCVWD_Daily_RainGage_ts.csv : csv of the station precipitation data in Santa Clara County, CA
-* Station_XY_ft.csv: csv of station Lon Lat Coordinates
+Data used for the examples are hosted in this repository. The zipped file contains the following: *SCVWD_Daily_RainGage_ts.csv*: csv of the station precipitation data in Santa Clara County, CA; and *Station_XY_ft.csv*: csv of station Lon Lat Coordinates
 You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory
 
 ```{r set-options, echo=FALSE, cache=FALSE}
