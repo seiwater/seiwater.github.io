@@ -31,8 +31,8 @@ This script will cover specifically...
 
 ## Resources
 Data used for the examples are hosted in this repository. The zipped file contains the following:
-    * _SCVWD_Daily_RainGage_ts.csv_ : csv of the station precipitation data in Santa Clara County, CA
-    * _Station_XY_ft.csv_: csv of station Lon Lat Coordinates
+* SCVWD_Daily_RainGage_ts.csv : csv of the station precipitation data in Santa Clara County, CA
+* Station_XY_ft.csv: csv of station Lon Lat Coordinates
 You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory
 
 ```{r set-options, echo=FALSE, cache=FALSE}
@@ -61,7 +61,7 @@ library(hydroGOF)
 ```
 
 # 1. Get the data in
-Now will import the downloaded precipitation time-series
+Now we will import the downloaded precipitation time-series.
 
 ## Loading CSV file of the Lon, Lat Coordinates of the rainfall stations (NAD 1983 CA III FIPS - ft)
 ```{r eval = TRUE}
@@ -69,7 +69,7 @@ setwd(tempdir())
 Coord <- read.csv('fillmissdata\\Station_XY_ft.csv', check.names = F, stringsAsFactors = F)
 head(Coord)
 ```
-that was easy!
+That was easy!
 
 Note the 'check.names = F' parameter in the 'read.csv' function preserves the column headers from the original record table.
 
