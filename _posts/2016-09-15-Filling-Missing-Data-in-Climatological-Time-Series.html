@@ -167,7 +167,7 @@ $(document).ready(function () {
 </div>
 <div id="resources" class="section level2">
 <h2>Resources</h2>
-<p>Data used for the examples are hosted in this repository. The zipped file contains the following: * <em>SCVWD_Daily_RainGage_ts.csv</em> : csv of the station precipitation data in Santa Clara County, CA * <em>Station_XY_ft.csv</em>: csv of station Lon Lat Coordinates You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory</p>
+<p>Data used for the examples are hosted in this repository. The zipped file contains the following: * SCVWD_Daily_RainGage_ts.csv : csv of the station precipitation data in Santa Clara County, CA * Station_XY_ft.csv: csv of station Lon Lat Coordinates You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory</p>
 <pre class="r"><code>setwd(tempdir())  # set working directory to temporary directory 
 
 download.file(&quot;https://github.com/seiwater/Raw-Data/raw/master/fillmissdata.zip&quot;, destfile = 'fillmissdata.zip')
@@ -185,7 +185,7 @@ library(hydroGOF)</code></pre>
 </div>
 <div id="get-the-data-in" class="section level1">
 <h1>1. Get the data in</h1>
-<p>Now will import the downloaded precipitation time-series</p>
+<p>Now we will import the downloaded precipitation time-series.</p>
 <div id="loading-csv-file-of-the-lon-lat-coordinates-of-the-rainfall-stations-nad-1983-ca-iii-fips---ft" class="section level2">
 <h2>Loading CSV file of the Lon, Lat Coordinates of the rainfall stations (NAD 1983 CA III FIPS - ft)</h2>
 <pre class="r"><code>setwd(tempdir())
@@ -198,7 +198,7 @@ head(Coord)</code></pre>
 ## 4 6004  6004_Almaden Watershed   6169879    1882540     640
 ## 5 6005 6005_Alviso_Leslie Salt   6132307    1978969      10
 ## 6 6006         6006_Ben Lomond   6099522    1856701     335</code></pre>
-<p>that was easy!</p>
+<p>That was easy!</p>
 <p>Note the ‘check.names = F’ parameter in the ‘read.csv’ function preserves the column headers from the original record table.</p>
 </div>
 <div id="importing-the-rainfall-records-and-specifying-the-start-and-end-date-for-the-analysis" class="section level2">
