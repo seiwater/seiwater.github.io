@@ -11,10 +11,9 @@ output:
     toc: yes
 ---
 
-**Intro:** Some notes for filling missing data in climatological time-series using R, completed by the Stockholm Environment Institute (SEI) Water Group (see SEI Water Group's github page [here](https://seiwater.github.io/).
+**Intro:** Some notes for filling missing data in climatological time-series using R, completed by the Stockholm Environment Institute (SEI) Water Group (see SEI Water Group's github page [here](https://seiwater.github.io/)).
 
-**Access to raw data and Rmarkdown files:** The Rmarkdown file and data used to generate this page is stored on [github](seiwater.github.io/R/2016-09-15-Filling-Missing-Data-in-Climatological-Time-Series.Rmd), and the raw data/files used in this example are stored [here] (seiwater.github.io/raw_data/fillmissdata.zip)
-
+**Access to raw data and Rmarkdown files:** The Rmarkdown file and data used to generate this page is stored on [github](seiwater.github.io/R/2016-09-15-Filling-Missing-Data-in-Climatological-Time-Series.Rmd), and the raw data/files used in this example are stored [here](https://github.com/seiwater/Raw-Data/raw/master/fillmissdata.zip)
 
 **Last updated:** by Manon von Kaenel, Sept 16th 2016
 
@@ -30,7 +29,11 @@ This script will cover specifically...
 * Calculating error indices between simulated and observed time series
 
 ## Resources
-Data used for the examples are hosted in this repository. The zipped file contains the following: *SCVWD_Daily_RainGage_ts.csv*: csv of the station precipitation data in Santa Clara County, CA; and *Station_XY_ft.csv*: csv of station Lon Lat Coordinates
+Data used for the examples are hosted in this repository. The zipped file contains the following...
+
++ SCVWD-Daily-RainGage-ts.csv: csv of the station precipitation data in Santa Clara County, CA
++ Station-XY-ft.csv: csv of station Lon Lat Coordinates
+
 You can download/unzip the data by hand or run the following code to download and unzip the data to a temporary directory
 
 ```{r set-options, echo=FALSE, cache=FALSE}
