@@ -13,12 +13,12 @@ output:
 
 Some notes for filling missing data in climatological time-series using R, completed by the Stockholm Environment Institute (SEI) Water Group (see SEI Water Group's github page [here](https://seiwater.github.io/).
 
-The Rmarkdown file and data used to generate this page is stored on [github](https://github.com/njdepsky/Climate-Data-Processing-for-WEAP-Applications).
+The Rmarkdown file and data used to generate this page is stored on [github](seiwater.github.io/R/2016-09-15-Filling-Missing-Data-in-Climatological-Time-Series.Rmd).
 
-Last updated: by Manon von Kaenel, Sept 15th 2016
+Last updated: by Manon von Kaenel, Sept 16th 2016
 
 ## Goals 
-Go over some common workflows relevant to handling missing data when dealing with climatological station time-series data (This example will use precipitation records from the Santa Clara Valley, CA). A potential application for this script is to help in preparing climate input data for a WEAP model. Before even using this script, we recommend conducing some exploratory analysis on your data, including identifying and correcting any anomalies or incorrect data (see our process [here](https://seiwater.github.io/).
+Go over some common workflows relevant to handling missing data when dealing with climatological station time-series data (This example will use precipitation records from the Santa Clara Valley, CA). A potential application for this script is to help in preparing climate input data for a WEAP model. Before even using this script, we recommend conducing some exploratory analysis on your data, including identifying and correcting any anomalies or incorrect data (see our process [here](https://seiwater.github.io/2016/08/19/Initial-Climate-Data-Explorations.html)).
 
 This script will cover specifically... 
 
@@ -38,7 +38,7 @@ You can download/unzip the data by hand or run the following code to download an
 options(width = 100)
 ```
 
-```{r eval = TRUE}
+```{r eval = TRUE, message = FALSE}
 setwd(tempdir())  # set working directory to temporary directory 
 
 download.file("https://github.com/njdepsky/Climate-Data-Processing-for-WEAP-Applications/raw/master/rawdata/fillmissdata.zip", destfile = 'fillmissdata.zip')
@@ -52,7 +52,7 @@ The methods used in this script are described in detail in R. Teegavarapu and V.
 # 0. Prerequisites
 Some date functions we will use come from the `zoo` package, and some of the error funcions come from the `hydroGOF` package,  so be sure to have both installed prior to attempting this exercise. You can download these packages with the following command.
 
-```{r eval = TRUE}
+```{r eval = TRUE, message = FALSE, warning = FALSE,results='hide'}
 install.packages('zoo', repos = "http://cran.cnr.berkeley.edu/", lib=tempdir())
 install.packages('hydroGOF', repos = "http://cran.cnr.berkeley.edu/", lib=tempdir())
 library(zoo)
@@ -184,7 +184,7 @@ Waldo Tobler's First Law of Geography states that "everything is related to ever
 Let's graph it. This will help you decide which weighting method is most appropriate for your data. We'll create a plot for every station showing distance vs. correlation coefficient for each of its neighboring stations. These plots will be saved in a PDF file in your temporary directory.
 
 
-```{r eval = TRUE}
+```{r eval = TRUE, results='hide'}
 dir_out <- tempdir() # set output directory in which you would like to save your graphs
 
 plotpath <- c(dir_out, "\\", "CorrelationvsDistance", ".pdf") # sets up the plot path for your resulting PDF graphs
@@ -315,7 +315,7 @@ We can see from the plot above that many periods of missing data have been fille
 
 Let's see how the data looks as a time series. This bit of script will plot the filled in time series at each station in red, and overlay that with the raw/observed time series from each station. This can help you visualize how well the weighting method is estimating missing data (if it follows the general climate trends observed at your station, etc). The output will be a PDF file.
 
-```{r eval = TRUE, fig.width = 10, fig.height = 8}
+```{r eval = TRUE, results='hide'}
 dir_out <- tempdir() # sets the output directory
 
 filename <- "TimeSeriesGraphs_FilledinData"
