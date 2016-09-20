@@ -423,13 +423,12 @@ matrix[,1] <- as.character(allstations)
 
 
 for (i in 1:length(allstations)) 
-{
-  p <- i+4
+{ p <- i+4
   NA_percent <- round(sum(is.na(data[,p]))/nrow(data)*100, 2)
-  Mean <- mean(as.numeric(data[,p]),na.rm=TRUE)
-  Max <- max(as.numeric(data[,p]),na.rm=TRUE)
-  Min <- min(as.numeric(data[,p]),na.rm=TRUE)
-  SD <- sd(as.numeric(data[,p]),na.rm=TRUE)
+  Mean <- mean(as.numeric(as.character(data[,p])),na.rm=TRUE)
+  Max <- max(as.numeric(as.character(data[,p])),na.rm=TRUE)
+  Min <- min(as.numeric(as.character(data[,p])),na.rm=TRUE)
+  SD <- sd(as.numeric(as.character(data[,p])),na.rm=TRUE)
            
   matrix[i,2] <- NA_percent
   matrix[i,3] <- Max
@@ -489,10 +488,10 @@ for (i in 1:length(allstations))
 {
   p <- i+4
   NA_percent <- round(sum(is.na(data[,p]))/nrow(data)*100, 2)
-  Mean <- mean(as.numeric(data[,p]),na.rm=TRUE)
-  Max <- max(as.numeric(data[,p]),na.rm=TRUE)
-  Min <- min(as.numeric(data[,p]),na.rm=TRUE)
-  SD <- sd(as.numeric(data[,p]),na.rm=TRUE)
+  Mean <- mean(as.numeric(as.character(data[,p])),na.rm=TRUE)
+  Max <- max(as.numeric(as.character(data[,p])),na.rm=TRUE)
+  Min <- min(as.numeric(as.character(data[,p])),na.rm=TRUE)
+  SD <- sd(as.numeric(as.character(data[,p])),na.rm=TRUE)
            
   matrix[i,2] <- NA_percent
   matrix[i,3] <- Max
