@@ -526,7 +526,15 @@ Precip <- subset(Precip, Precip$Anio <= year2) # Selects data frame for which th
 
 ```
 
-Note that at this point in the process, you can also eliminate those stations you've identified as too faulty, or with too much missing data, or too far from your study area. Here, we'll eliminate 
+Note that at this point in the process, you can also eliminate those stations you've identified as too faulty, or with too much missing data, or too far from your study area. Here, for example, we'll eliminate the station called "Namballe", because it has over 70% missing data for our selected time frame for both temperature and precipitation and because it's located very far from our study area.
+
+```{r}
+Precip$NAMBALLE <- NULL
+Temp_Max$NAMBALLE <- NULL
+Temp_Min$NAMBALLE <- NULL
+```
+
+
 # 6. Identifying and removing errors & extremes
 
 After you've familiarized ourselves with your data, the next step is to identify errors and anomalies in your time series. This requires an understanding of what kinds of climate values are appropriate for your study site. 
@@ -764,7 +772,7 @@ for (c in 1:ncol(Temp_Min)) # cycles through the columns of the data table (to l
     if (as.numeric(Temp_Min[r,c]) > as.numeric(Temp_Max[r,c])) # selects the row/column in which minimum temperature is greater than maximum temperature for a timestep
     { row <- r + (c-4)*nrow(Temp_Min)
     errormatrix[row,1] <- colnames(Temp_Max[c]) # saves the station name in which this error ocurrs in the error matrix
-    errormatrix[row,2] <- paste(c(Temp_Max[r,2],"-",Temp_Max[r,3],"-",Temp_Max[r,4]),collapse="") # saves the date on which this error ocurrs in the error matrix
+    errormatrix[row,2] <- paste(c(Temp_Max[r,1],"-",Temp_Max[r,2],"-",Temp_Max[r,3]),collapse="") # saves the date on which this error ocurrs in the error matrix
     errormatrix[row,3] <- Temp_Min[r,c] # saves the minimum temperature value which caused this error in the error matrix
     errormatrix[row,4] <- Temp_Max[r,c] # saves the maximum temperature value which caused this error in the error matrix
     }
