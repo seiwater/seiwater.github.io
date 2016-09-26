@@ -293,19 +293,7 @@ ggmap(maptest) + # plots the backgound map
 ggsave("Map_Stations.jpg") # saves the map as a JPG
 ```
 
-Let's see how the map looks like. We've defined the empty black circles as the locations of the climate stations in your dataset. If this circle contains a blue triangle, the station has precipitation data; an orange triangle indicates temperature data.
-
-```{r eval = TRUE, echo=FALSE, warning=FALSE,message=FALSE}
-ggmap(maptest) + # plots the backgound map
-  geom_polygon(aes(x=long, y=lat),size=0.4,colour='black',data=project,alpha=0) + # plots the polygon of your project area
-  geom_text(data = Coordinates, aes(x = Coordinates[,"Longitude"], y = Coordinates[,"Latitude"], label = Coordinates[,"Station"]), 
-            size = 1, vjust = 0, hjust = -0.2, color="light grey") + # plots the names of all the stations
-  geom_point(data = as.data.frame(Coordinates), aes(x=as.numeric(Coordinates[,"Longitude"]), y=as.numeric(Coordinates[,"Latitude"])),colour='black',size=2.5,shape=1) + # plots all the stations in black circles
-  geom_point(data = as.data.frame(coordinates_precip), aes(x=as.numeric(coordinates_precip[,"Longitude"]), y=as.numeric(coordinates_precip[,"Latitude"])),colour='blue',size=1.5,shape=6) + # plots the precipitation stations in blue
-  geom_point(data = as.data.frame(coordinates_temp), aes(x=as.numeric(coordinates_temp[,"Longitude"]), y=as.numeric(coordinates_temp[,"Latitude"])),colour='orange',size=1.5,shape=2) + # plots the temperature stations in orange
-  labs(title=map_title) # adds a title to the map
-```
-
+Let's take a look at the map (above). We've defined the empty black circles as the locations of the climate stations in your dataset. If this circle contains a blue triangle, the station has precipitation data; an orange triangle indicates temperature data.
 
 # 4. Statistical Variability
 
