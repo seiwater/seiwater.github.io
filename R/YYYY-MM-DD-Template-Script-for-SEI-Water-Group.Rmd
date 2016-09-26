@@ -1,0 +1,54 @@
+---
+title: "Template R Markdown Script for SEI Water Group Github page"
+author: '  Manon von Kaenel & Nick Depsky '
+layout: post
+date: '  August 5th 2016'
+output:
+  html_document:
+    number_sections: no
+    theme: readable
+    toc: yes
+  pdf_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ 
+**Intro:** Quick introduction to script here. End with: The script was prepared by the Stockholm Environment Institute (SEI) Water Group (see SEI Water Group's github page [here](https://seiwater.github.io/)).
+
+The name of your script must be formatted like the name of this script: with a YYYY-MM-DD-Name-Of-Script format. The date part of the name allows our github page to automatically include the script on the "Tools" page. Once you knit your rmarkdown file to HTML, upload the HTML file to the "_posts" folder on the SEI github.io repository, and upload the rmarkdown file to the "R" folder on the SEI github.io repository.
+
+**Access to raw data and Rmarkdown files:** The Rmarkdown file used to generate this page is stored on github, [here](https://github.com/seiwater/seiwater.github.io/tree/master/R). The example data/files used in this script is also stored on github, [here](https://github.com/seiwater/Raw-Data/raw/master/rawclimatedataR.zip). 
+
+**Last Updated:** Manon von Kaenel, Sept 26th 2016
+
+## Goals 
+What are the goals of your scrit? 
+
+## Resources
+Where is the data used in this script and how can we access it?
+
+# 0. Prerequisites
+What packages do we need to download?
+
+# 1. First part of script
+
+This can include a description of this portion of the script and some r chunks. Or figures.
+
+## Can also include subsections
+
+This is the text for the subsection.
+
+## Second subsection
+
+More stuff.
+
+# 2. Second part of script
+
+# 3. Third part of script
+
+# Conclusions and next steps
+
+Conclusions for the script and any next steps.
